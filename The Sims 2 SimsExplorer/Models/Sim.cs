@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace The_Sims_2_SimsExplorer.Models
 {
-    [DelimitedRecord(",")]
+    [DelimitedRecord(","), IgnoreFirst(1)]
     public class Sim
     {
         public string Hood;
+        [FieldQuoted]
         public string HoodName;
         public string NID;
+        [FieldQuoted]
         public string FirstName;
+        [FieldQuoted]
         public string LastName;
+        [FieldQuoted]
         public string SimDescription;
         public string FamilyInstance;
+        [FieldQuoted]
         public string HouseholdName;
         public string HouseNumber;
         public string AvailableCharacterData;
@@ -38,6 +43,7 @@ namespace The_Sims_2_SimsExplorer.Models
         public string PrevAgeDays;
         public string AgeDuration;
         public string BlizLifelinePoints;
+        public string LifelinePoints;
         public string LifelineScore;
         public string GenActive;
         public string GenNeat;
@@ -91,6 +97,5 @@ namespace The_Sims_2_SimsExplorer.Models
         public string SecondaryAspiration;
         public string HobbyPredestined;
         public string LifetimeWant;
-
     }
 }

@@ -1,13 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FileHelpers;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using The_Sims_2_SimsExplorer.Models;
+using The_Sims_2_SimsExplorer.Utilities;
 
 namespace The_Sims_2_SimsExplorer.Controllers
 {
@@ -49,7 +54,20 @@ namespace The_Sims_2_SimsExplorer.Controllers
                     await file.CopyToAsync(stream);
                 }
 
-               
+                var engine = new FileHelperEngine<Sim>(Encoding.UTF8);
+                var records = engine.ReadFile(filePath);
+
+                
+                foreach (var record in records)
+                {
+                    Debug.WriteLine("-----------------------------");
+                    Debug.WriteLine(DisplayObjectInfo.ShowDisplayObjectInfo(record));
+                }
+
+                ViewBag.SimList = records;
+
+
+
             }
 
             // Process uploaded files
@@ -57,5 +75,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
 
             return Ok(new { count = 1, size = file.Length});
         }
+
+        
     }
 }

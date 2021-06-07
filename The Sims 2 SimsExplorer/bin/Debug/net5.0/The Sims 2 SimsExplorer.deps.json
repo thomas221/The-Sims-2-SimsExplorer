@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "The Sims 2 SimsExplorer/1.0.0": {
         "dependencies": {
+          "FileHelpers": "3.5.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -322,6 +323,17 @@
         },
         "compile": {
           "The Sims 2 SimsExplorer.dll": {}
+        }
+      },
+      "FileHelpers/3.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/FileHelpers.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FileHelpers.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2029,6 +2041,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FileHelpers/3.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CjeIunu+f2KfJj3UOMqBQoDaD57YCObc1LesBbgXWR4/wVx7bHszbMumyxuDJc8SzaP9np7BUTeTIXz1c+EDtg==",
+      "path": "filehelpers/3.5.0",
+      "hashPath": "filehelpers.3.5.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",
