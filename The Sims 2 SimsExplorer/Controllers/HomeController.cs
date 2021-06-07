@@ -64,7 +64,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
                     Debug.WriteLine(DisplayObjectInfo.ShowDisplayObjectInfo(record));
                 }
 
-                ViewBag.SimList = records;
+                ViewBag.SimList = "testit";
 
 
 
@@ -73,7 +73,9 @@ namespace The_Sims_2_SimsExplorer.Controllers
             // Process uploaded files
             // Don't rely on or trust the FileName property without validation.
 
-            return Ok(new { count = 1, size = file.Length});
+
+            return View();
+            //return Ok(new { count = 1, size = file.Length });
         }
 
         
