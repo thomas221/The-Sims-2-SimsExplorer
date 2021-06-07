@@ -1,0 +1,40 @@
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\appsettings.json
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.exe
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.deps.json
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.runtimeconfig.json
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.runtimeconfig.dev.json
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.dll
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\ref\The Sims 2 SimsExplorer.dll
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.pdb
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.Views.dll
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\The Sims 2 SimsExplorer.Views.pdb
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.csprojAssemblyReference.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.AssemblyInfoInputs.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.AssemblyInfo.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.csproj.CoreCompileInputs.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.RazorAssemblyInfo.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.RazorAssemblyInfo.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\staticwebassets\The Sims 2 SimsExplorer.StaticWebAssets.Manifest.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\staticwebassets\The Sims 2 SimsExplorer.StaticWebAssets.xml
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\scopedcss\bundle\The Sims 2 SimsExplorer.styles.css
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.TagHelpers.input.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.TagHelpers.output.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.RazorCoreGenerate.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.RazorTargetAssemblyInfo.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.RazorTargetAssemblyInfo.cs
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.Views.pdb
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.dll
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\ref\The Sims 2 SimsExplorer.dll
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.pdb
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.genruntimeconfig.cache
+C:\Users\thoma\source\repos\The Sims 2 SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.csproj.CopyComplete

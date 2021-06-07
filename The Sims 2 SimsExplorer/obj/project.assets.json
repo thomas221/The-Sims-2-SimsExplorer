@@ -1,0 +1,106 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "FileHelpers/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FileHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FileHelpers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FileHelpers/3.5.0": {
+      "sha512": "CjeIunu+f2KfJj3UOMqBQoDaD57YCObc1LesBbgXWR4/wVx7bHszbMumyxuDJc8SzaP9np7BUTeTIXz1c+EDtg==",
+      "type": "package",
+      "path": "filehelpers/3.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "filehelpers.3.5.0.nupkg.sha512",
+        "filehelpers.nuspec",
+        "lib/net40/FileHelpers.dll",
+        "lib/net40/FileHelpers.xml",
+        "lib/net45/FileHelpers.dll",
+        "lib/net45/FileHelpers.xml",
+        "lib/netstandard2.0/FileHelpers.dll",
+        "lib/netstandard2.0/FileHelpers.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "FileHelpers >= 3.5.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\thoma\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\The-Sims-2-SimsExplorer\\The Sims 2 SimsExplorer\\The Sims 2 SimsExplorer.csproj",
+      "projectName": "The Sims 2 SimsExplorer",
+      "projectPath": "C:\\Users\\thoma\\source\\repos\\The-Sims-2-SimsExplorer\\The Sims 2 SimsExplorer\\The Sims 2 SimsExplorer.csproj",
+      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thoma\\source\\repos\\The-Sims-2-SimsExplorer\\The Sims 2 SimsExplorer\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "FileHelpers": {
+            "target": "Package",
+            "version": "[3.5.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

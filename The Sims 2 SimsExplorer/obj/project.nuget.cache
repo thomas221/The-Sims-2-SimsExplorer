@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "nPCDyH8TINbz5+GfNMnL18ewFi4Lv2NYXq5vP5BoleDzliqV0Va4xw4PgGm1/HHHK28QdSDOMDt5HXlPt6HrHg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thoma\\source\\repos\\The-Sims-2-SimsExplorer\\The Sims 2 SimsExplorer\\The Sims 2 SimsExplorer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thoma\\.nuget\\packages\\filehelpers\\3.5.0\\filehelpers.3.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
