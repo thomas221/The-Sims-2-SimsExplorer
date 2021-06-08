@@ -11,19 +11,21 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using The_Sims_2_SimsExplorer.Data;
 using The_Sims_2_SimsExplorer.Models;
 using The_Sims_2_SimsExplorer.Utilities;
 
 namespace The_Sims_2_SimsExplorer.Controllers
 {
 
+
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -41,6 +43,12 @@ namespace The_Sims_2_SimsExplorer.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        /*
+        [HttpGet("{id:int}")]
+        public IActionResult GetById(int id)
+        {
+            
+        }*/
 
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
@@ -56,13 +64,8 @@ namespace The_Sims_2_SimsExplorer.Controllers
 
                 var engine = new FileHelperEngine<Sim>(Encoding.UTF8);
                 var records = engine.ReadFile(filePath);
-
-                
-                foreach (var record in records)
-                {
-                    Debug.WriteLine("-----------------------------");
-                    Debug.WriteLine(DisplayObjectInfo.ShowDisplayObjectInfo(record));
-                }
+                _context.Sims.AddRange(records);
+                _context.SaveChanges();
 
                 ViewBag.SimList = records;
 

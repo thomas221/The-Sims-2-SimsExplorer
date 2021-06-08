@@ -1,6 +1,7 @@
 ﻿using FileHelpers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace The_Sims_2_SimsExplorer.Models
         public string Hood;
         [FieldQuoted]
         public string HoodName;
-        public string NID;
+        public string Id { get; set; }
         [FieldQuoted]
         public string FirstName;
         [FieldQuoted]
