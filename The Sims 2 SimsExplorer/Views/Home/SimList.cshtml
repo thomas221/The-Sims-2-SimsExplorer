@@ -9,7 +9,7 @@
 @foreach (var record in simList)
 { 
     <tr class="solid-border">
-        <td class="solid-border">@record.FirstName</td>
+        <td class="solid-border"><a href="/sim/@record.NID">@record.FirstName</a></td>
         <td class="solid-border">@record.LastName</td>
         <td class="solid-border">@record.SimDescription</td>
     </tr>}

@@ -43,13 +43,30 @@ namespace The_Sims_2_SimsExplorer.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        /*
-        [HttpGet("{id:int}")]
+        
+        [Route("sim/{id:int}")]
         public IActionResult GetById(int id)
         {
-            
+            bool found = false;
+            Sim sim = null;
+            foreach(Sim aSim in _context.Sims.ToList())
+            {
+                if(aSim.NID == ""+id)
+                {
+                    found = true;
+                    sim = aSim;
+                }
+            }
+            if (!found)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Sim = sim;
+
+            return View("Sim");
         }
-        */
+        
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
         {
