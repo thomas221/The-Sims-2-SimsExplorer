@@ -24,6 +24,14 @@ a {
   border-color: #1861ac;
 }
 
+.solid-border {
+    border : 2px solid black;
+}
+
+table.solid-border {
+    border-collapse : collapse;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

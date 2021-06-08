@@ -23,7 +23,7 @@
 
 <script>
     "use strict";
-    async function AJAXSubmit (oFormElement) {
+    function AJAXSubmit (oFormElement) {
       const formData = new FormData(oFormElement);
       try {
         const response = await fetch(oFormElement.action, {

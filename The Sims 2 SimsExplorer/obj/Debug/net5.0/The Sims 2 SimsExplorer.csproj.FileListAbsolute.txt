@@ -79,4 +79,4 @@ C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\
 C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.Views.pdb
 C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.csproj.CopyComplete
 C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.genruntimeconfig.cache
-C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Home\Upload.cshtml.g.cs
+C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Home\SimList.cshtml.g.cs

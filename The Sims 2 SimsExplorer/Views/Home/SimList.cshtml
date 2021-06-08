@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Imported";
+    var simList = ViewBag.SimList;
+}
+
+
+<p>Sims: </p>
+<table class="solid-border">
+@foreach (var record in simList)
+{ 
+    <tr class="solid-border">
+        <td class="solid-border">@record.FirstName</td>
+        <td class="solid-border">@record.LastName</td>
+        <td class="solid-border">@record.SimDescription</td>
+    </tr>}
+</table>
