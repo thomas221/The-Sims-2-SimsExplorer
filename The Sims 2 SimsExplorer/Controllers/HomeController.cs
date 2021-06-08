@@ -44,6 +44,14 @@ namespace The_Sims_2_SimsExplorer.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         
+        public IActionResult SimList()
+        {
+
+            ViewBag.SimList = _context.Sims.ToList();
+
+            return View();
+        }
+
         [Route("sim/{id:int}")]
         public IActionResult GetById(int id)
         {

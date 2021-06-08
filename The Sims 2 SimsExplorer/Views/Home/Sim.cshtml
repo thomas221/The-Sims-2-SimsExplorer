@@ -3,13 +3,15 @@
     var sim = ViewBag.Sim;
 }
 
+<a href="/Home/SimList">Back</a>
+
 
 <table>
     <tr><td>Hood</td><td>@sim.Hood</td></tr>
     <tr><td>HoodName</td><td>@sim.HoodName</td></tr>
     <tr><td>NID</td><td>@sim.NID</td></tr>
-    <tr><td>FirstName</td><td>@sim.FirstName</td></tr>
-    <tr><td>LastName</td><td>@sim.LastName</td></tr>
+    <tr><td>FirstName</td><td><span class="bold">@sim.FirstName</span></td></tr>
+    <tr><td>LastName</td><td><span class="bold">@sim.LastName</span></td></tr>
     <tr><td>SimDescription</td><td>@sim.SimDescription</td></tr>
     <tr><td>FamilyInstance</td><td>@sim.FamilyInstance</td></tr>
     <tr><td>HouseholdName</td><td>@sim.HouseholdName</td></tr>

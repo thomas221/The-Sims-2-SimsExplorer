@@ -7,10 +7,13 @@
 <p>Sims: </p>
 <table class="solid-border">
 @foreach (var record in simList)
-{ 
+{
+    @if (!(record.FirstName == "" && record.LastName == "" && record.SimDescription == ""))
+    {
     <tr class="solid-border">
         <td class="solid-border"><a href="/sim/@record.NID">@record.FirstName</a></td>
         <td class="solid-border">@record.LastName</td>
         <td class="solid-border">@record.SimDescription</td>
     </tr>}
+    }
 </table>
