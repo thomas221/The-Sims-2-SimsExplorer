@@ -10,93 +10,178 @@ namespace The_Sims_2_SimsExplorer.Models
     [DelimitedRecord(","), IgnoreFirst(1)]
     public class Sim
     {
-        public string Hood;
+        private string hood;
         [FieldQuoted]
-        public string HoodName;
-        public string Id { get; set; }
+        private string hoodName;
+        private string nID;
         [FieldQuoted]
-        public string FirstName;
+        private string firstName;
         [FieldQuoted]
-        public string LastName;
+        private string lastName;
         [FieldQuoted]
-        public string SimDescription;
-        public string FamilyInstance;
+        private string simDescription;
+        private string familyInstance;
         [FieldQuoted]
-        public string HouseholdName;
-        public string HouseNumber;
-        public string AvailableCharacterData;
-        public string Unlinked;
-        public string ParentA;
-        public string ParentB;
-        public string Spouse;
-        public string BodyType;
-        public string NPCType;
-        public string SchoolType;
-        public string Grade;
-        public string CareerPerformance;
-        public string Career;
-        public string CareerLevel;
-        public string ZodiacSign;
-        public string Aspiration;
-        public string Gender;
-        public string LifeSection;
-        public string AgeDaysLeft;
-        public string PrevAgeDays;
-        public string AgeDuration;
-        public string BlizLifelinePoints;
-        public string LifelinePoints;
-        public string LifelineScore;
-        public string GenActive;
-        public string GenNeat;
-        public string GenNice;
-        public string GenOutgoing;
-        public string GenPlayful;
-        public string Active;
-        public string Neat;
-        public string Nice;
-        public string Outgoing;
-        public string Playful;
-        public string Animals;
-        public string Crime;
-        public string Culture;
-        public string Entertainment;
-        public string Environment;
-        public string Fashion;
-        public string FemalePreference;
-        public string Food;
-        public string Health;
-        public string MalePreference;
-        public string Money;
-        public string Paranormal;
-        public string Politics;
-        public string School;
-        public string Scifi;
-        public string Sport;
-        public string Toys;
-        public string Travel;
-        public string Weather;
-        public string Work;
-        public string Body;
-        public string Charisma;
-        public string Cleaning;
-        public string Cooking;
-        public string Creativity;
-        public string Fatness;
-        public string Logic;
-        public string Mechanical;
-        public string Romance;
-        public string IsAtUniversity;
-        public string UniEffort;
-        public string UniGrade;
-        public string UniTime;
-        public string UniSemester;
-        public string UniInfluence;
-        public string UniMajor;
-        public string Species;
-        public string Salary;
-        public string PrimaryAspiration;
-        public string SecondaryAspiration;
-        public string HobbyPredestined;
-        public string LifetimeWant;
+        private string householdName;
+        private string houseNumber;
+        private string availableCharacterData;
+        private string unlinked;
+        private string parentA;
+        private string parentB;
+        private string spouse;
+        private string bodyType;
+        private string nPCType;
+        private string schoolType;
+        private string grade;
+        private string careerPerformance;
+        private string career;
+        private string careerLevel;
+        private string zodiacSign;
+        private string aspiration;
+        private string gender;
+        private string lifeSection;
+        private string ageDaysLeft;
+        private string prevAgeDays;
+        private string ageDuration;
+        private string blizLifelinePoints;
+        private string lifelinePoints;
+        private string lifelineScore;
+        private string genActive;
+        private string genNeat;
+        private string genNice;
+        private string genOutgoing;
+        private string genPlayful;
+        private string active;
+        private string neat;
+        private string nice;
+        private string outgoing;
+        private string playful;
+        private string animals;
+        private string crime;
+        private string culture;
+        private string entertainment;
+        private string environment;
+        private string fashion;
+        private string femalePreference;
+        private string food;
+        private string health;
+        private string malePreference;
+        private string money;
+        private string paranormal;
+        private string politics;
+        private string school;
+        private string scifi;
+        private string sport;
+        private string toys;
+        private string travel;
+        private string weather;
+        private string work;
+        private string body;
+        private string charisma;
+        private string cleaning;
+        private string cooking;
+        private string creativity;
+        private string fatness;
+        private string logic;
+        private string mechanical;
+        private string romance;
+        private string isAtUniversity;
+        private string uniEffort;
+        private string uniGrade;
+        private string uniTime;
+        private string uniSemester;
+        private string uniInfluence;
+        private string uniMajor;
+        private string species;
+        private string salary;
+        private string primaryAspiration;
+        private string secondaryAspiration;
+        private string hobbyPredestined;
+        private string lifetimeWant;
+
+        public string Hood { get => hood; set => hood = value; }
+        public string HoodName { get => hoodName; set => hoodName = value; }
+        [Key]
+        public string NID { get => nID; set => nID = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string SimDescription { get => simDescription; set => simDescription = value; }
+        public string FamilyInstance { get => familyInstance; set => familyInstance = value; }
+        public string HouseholdName { get => householdName; set => householdName = value; }
+        public string HouseNumber { get => houseNumber; set => houseNumber = value; }
+        public string AvailableCharacterData { get => availableCharacterData; set => availableCharacterData = value; }
+        public string Unlinked { get => unlinked; set => unlinked = value; }
+        public string ParentA { get => parentA; set => parentA = value; }
+        public string ParentB { get => parentB; set => parentB = value; }
+        public string Spouse { get => spouse; set => spouse = value; }
+        public string BodyType { get => bodyType; set => bodyType = value; }
+        public string NPCType { get => nPCType; set => nPCType = value; }
+        public string SchoolType { get => schoolType; set => schoolType = value; }
+        public string Grade { get => grade; set => grade = value; }
+        public string CareerPerformance { get => careerPerformance; set => careerPerformance = value; }
+        public string Career { get => career; set => career = value; }
+        public string CareerLevel { get => careerLevel; set => careerLevel = value; }
+        public string ZodiacSign { get => zodiacSign; set => zodiacSign = value; }
+        public string Aspiration { get => aspiration; set => aspiration = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public string LifeSection { get => lifeSection; set => lifeSection = value; }
+        public string AgeDaysLeft { get => ageDaysLeft; set => ageDaysLeft = value; }
+        public string PrevAgeDays { get => prevAgeDays; set => prevAgeDays = value; }
+        public string AgeDuration { get => ageDuration; set => ageDuration = value; }
+        public string BlizLifelinePoints { get => blizLifelinePoints; set => blizLifelinePoints = value; }
+        public string LifelinePoints { get => lifelinePoints; set => lifelinePoints = value; }
+        public string LifelineScore { get => lifelineScore; set => lifelineScore = value; }
+        public string GenActive { get => genActive; set => genActive = value; }
+        public string GenNeat { get => genNeat; set => genNeat = value; }
+        public string GenNice { get => genNice; set => genNice = value; }
+        public string GenOutgoing { get => genOutgoing; set => genOutgoing = value; }
+        public string GenPlayful { get => genPlayful; set => genPlayful = value; }
+        public string Active { get => active; set => active = value; }
+        public string Neat { get => neat; set => neat = value; }
+        public string Nice { get => nice; set => nice = value; }
+        public string Outgoing { get => outgoing; set => outgoing = value; }
+        public string Playful { get => playful; set => playful = value; }
+        public string Animals { get => animals; set => animals = value; }
+        public string Crime { get => crime; set => crime = value; }
+        public string Culture { get => culture; set => culture = value; }
+        public string Entertainment { get => entertainment; set => entertainment = value; }
+        public string Environment { get => environment; set => environment = value; }
+        public string Fashion { get => fashion; set => fashion = value; }
+        public string FemalePreference { get => femalePreference; set => femalePreference = value; }
+        public string Food { get => food; set => food = value; }
+        public string Health { get => health; set => health = value; }
+        public string MalePreference { get => malePreference; set => malePreference = value; }
+        public string Money { get => money; set => money = value; }
+        public string Paranormal { get => paranormal; set => paranormal = value; }
+        public string Politics { get => politics; set => politics = value; }
+        public string School { get => school; set => school = value; }
+        public string Scifi { get => scifi; set => scifi = value; }
+        public string Sport { get => sport; set => sport = value; }
+        public string Toys { get => toys; set => toys = value; }
+        public string Travel { get => travel; set => travel = value; }
+        public string Weather { get => weather; set => weather = value; }
+        public string Work { get => work; set => work = value; }
+        public string Body { get => body; set => body = value; }
+        public string Charisma { get => charisma; set => charisma = value; }
+        public string Cleaning { get => cleaning; set => cleaning = value; }
+        public string Cooking { get => cooking; set => cooking = value; }
+        public string Creativity { get => creativity; set => creativity = value; }
+        public string Fatness { get => fatness; set => fatness = value; }
+        public string Logic { get => logic; set => logic = value; }
+        public string Mechanical { get => mechanical; set => mechanical = value; }
+        public string Romance { get => romance; set => romance = value; }
+        public string IsAtUniversity { get => isAtUniversity; set => isAtUniversity = value; }
+        public string UniEffort { get => uniEffort; set => uniEffort = value; }
+        public string UniGrade { get => uniGrade; set => uniGrade = value; }
+        public string UniTime { get => uniTime; set => uniTime = value; }
+        public string UniSemester { get => uniSemester; set => uniSemester = value; }
+        public string UniInfluence { get => uniInfluence; set => uniInfluence = value; }
+        public string UniMajor { get => uniMajor; set => uniMajor = value; }
+        public string Species { get => species; set => species = value; }
+        public string Salary { get => salary; set => salary = value; }
+        public string PrimaryAspiration { get => primaryAspiration; set => primaryAspiration = value; }
+        public string SecondaryAspiration { get => secondaryAspiration; set => secondaryAspiration = value; }
+        public string HobbyPredestined { get => hobbyPredestined; set => hobbyPredestined = value; }
+        public string LifetimeWant { get => lifetimeWant; set => lifetimeWant = value; }
     }
 }

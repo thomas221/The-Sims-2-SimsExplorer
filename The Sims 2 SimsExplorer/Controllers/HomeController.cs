@@ -48,8 +48,8 @@ namespace The_Sims_2_SimsExplorer.Controllers
         public IActionResult GetById(int id)
         {
             
-        }*/
-
+        }
+        */
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
         {
