@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -55,17 +56,9 @@ namespace The_Sims_2_SimsExplorer.Controllers
         [Route("sim/{id:int}")]
         public IActionResult GetById(int id)
         {
-            bool found = false;
-            Sim sim = null;
-            foreach(Sim aSim in _context.Sims.ToList())
-            {
-                if(aSim.NID == ""+id)
-                {
-                    found = true;
-                    sim = aSim;
-                }
-            }
-            if (!found)
+            Sim sim = _context.Sims.Find(""+id);
+            
+            if (sim == null)
             {
                 return NotFound();
             }
@@ -86,12 +79,55 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
+                var unzippedFolder = Path.ChangeExtension(filePath, null);
+                ZipFile.ExtractToDirectory(filePath, unzippedFolder);
+
 
                 var engine = new FileHelperEngine<Sim>(Encoding.UTF8);
-                var records = engine.ReadFile(filePath);
+                var records = engine.ReadFile(unzippedFolder+"/ExportedSims.txt");
+
+                foreach (var record in records)
+                {
+                    string imageFileLocation = unzippedFolder + "\\SimImage\\" + record.Hood + "_" + record.NID + ".png";
+
+                    if (System.IO.File.Exists(imageFileLocation))
+                    {
+                        record.Image = Convert.ToBase64String(System.IO.File.ReadAllBytes(imageFileLocation));
+                    }
+
+                    Sim spouse = _context.Sims.Find(record.Spouse);
+                    if(spouse != null)
+                        record.SpouseName = spouse.FirstName+" "+spouse.LastName;
+                    
+                    Sim parentA = _context.Sims.Find(record.ParentA);
+                    if(parentA != null)
+                        record.ParentAName = parentA.FirstName + " " + parentA.LastName;
+
+                    Sim parentB = _context.Sims.Find(record.ParentB);
+                    if(parentB != null)
+                        record.ParentBName = parentB.FirstName + " " + parentB.LastName;
+                }
+
                 _context.Sims.AddRange(records);
                 _context.SaveChanges();
 
+                //All sims are known now, so now we can give names to spouses etc
+
+                foreach(var record in _context.Sims.ToList())
+                {
+                    Sim spouse = _context.Sims.Find(record.Spouse);
+                    if (spouse != null)
+                        record.SpouseName = spouse.FirstName + " " + spouse.LastName;
+
+                    Sim parentA = _context.Sims.Find(record.ParentA);
+                    if (parentA != null)
+                        record.ParentAName = parentA.FirstName + " " + parentA.LastName;
+
+                    Sim parentB = _context.Sims.Find(record.ParentB);
+                    if (parentB != null)
+                        record.ParentBName = parentB.FirstName + " " + parentB.LastName;
+                }
+                _context.SaveChanges();
                 ViewBag.SimList = records;
 
 

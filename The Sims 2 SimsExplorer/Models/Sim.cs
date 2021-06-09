@@ -27,8 +27,14 @@ namespace The_Sims_2_SimsExplorer.Models
         private string availableCharacterData;
         private string unlinked;
         private string parentA;
+        [FieldHidden]
+        private string parentAName;
         private string parentB;
+        [FieldHidden]
+        private string parentBName;
         private string spouse;
+        [FieldHidden]
+        private string spouseName;
         private string bodyType;
         private string nPCType;
         private string schoolType;
@@ -98,6 +104,8 @@ namespace The_Sims_2_SimsExplorer.Models
         private string secondaryAspiration;
         private string hobbyPredestined;
         private string lifetimeWant;
+        [FieldHidden]
+        private string image;
 
         public string Hood { get => hood; set => hood = value; }
         public string HoodName { get => hoodName; set => hoodName = value; }
@@ -183,5 +191,14 @@ namespace The_Sims_2_SimsExplorer.Models
         public string SecondaryAspiration { get => secondaryAspiration; set => secondaryAspiration = value; }
         public string HobbyPredestined { get => hobbyPredestined; set => hobbyPredestined = value; }
         public string LifetimeWant { get => lifetimeWant; set => lifetimeWant = value; }
+
+        [FieldHidden]
+        public string Image { get => image; set => image = value; }
+        [FieldHidden]
+        public string ParentAName { get => parentAName; set => parentAName = value; }
+        [FieldHidden]
+        public string ParentBName { get => parentBName; set => parentBName = value; }
+        [FieldHidden]
+        public string SpouseName { get => spouseName; set => spouseName = value; }
     }
 }
