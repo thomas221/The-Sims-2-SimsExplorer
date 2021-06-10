@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,13 +58,18 @@ namespace The_Sims_2_SimsExplorer.Controllers
         [Route("sim/{id:int}")]
         public IActionResult GetById(int id)
         {
-            Sim sim = _context.Sims.Find(""+id);
+            List<Sim> simList = ((JArray)JsonConvert.DeserializeObject(HttpContext.Session.GetString("SimList"))).ToObject<List<Sim>>();
+            
+            Sim sim = SimHelpers.FindSim(""+id,simList);
             
             if (sim == null)
             {
                 return NotFound();
             }
-
+            SimHelpers.InitializeRelatedSim(sim, simList);
+            ViewBag.ParentA = sim.ParentA;
+            ViewBag.ParentB = sim.ParentB;
+            ViewBag.Spouse = sim.Spouse;
             ViewBag.Sim = sim;
 
             return View("Sim");
@@ -86,6 +93,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 var engine = new FileHelperEngine<Sim>(Encoding.UTF8);
                 var records = engine.ReadFile(unzippedFolder+"/ExportedSims.txt");
 
+
                 foreach (var record in records)
                 {
                     string imageFileLocation = unzippedFolder + "\\SimImage\\" + record.Hood + "_" + record.SimId + ".png";
@@ -94,44 +102,19 @@ namespace The_Sims_2_SimsExplorer.Controllers
                     {
                         record.Image = Convert.ToBase64String(System.IO.File.ReadAllBytes(imageFileLocation));
                     }
-                    Debug.WriteLine(DisplayObjectInfo.ShowDisplayObjectInfo(record));
-
                 }
-
+                var simList = records.ToList();
                 
+                HttpContext.Session.SetString("SimList",JsonConvert.SerializeObject(simList));
 
                 _context.Sims.AddRange(records);
                 _context.SaveChanges();
-
-                //All sims are known now, so now we can find spouses etc
-                /*
-                foreach(var record in _context.Sims.ToList())
-                {
-                    Sim spouse = _context.Sims.Find(record.Spouse);
-                    if (spouse != null)
-                        record.SpouseSim = spouse;
-
-                    Sim parentA = _context.Sims.Find(record.ParentA);
-                    if (parentA != null)
-                        record.ParentASim = parentA;
-
-                    Sim parentB = _context.Sims.Find(record.ParentB);
-                    if (parentB != null)
-                        record.ParentBSim = parentB;
-                }
-                _context.SaveChanges();*/
                 ViewBag.SimList = records;
 
 
 
             }
-
-            // Process uploaded files
-            // Don't rely on or trust the FileName property without validation.
-
-
             return View("SimList");
-            //return Ok(new { count = 1, size = file.Length });
         }
 
         

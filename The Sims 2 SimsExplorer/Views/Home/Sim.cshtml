@@ -4,6 +4,9 @@
 @{
     ViewData["Title"] = "Sim";
     var sim = ViewBag.Sim;
+    var parentA = ViewBag.ParentA;
+    var parentB = ViewBag.ParentB;
+    var spouse = ViewBag.Spouse;
 }
 
 <a href="/Home/SimList">Back</a>
@@ -27,9 +30,9 @@
     <tr><td>HouseNumber</td><td>@sim.HouseNumber</td></tr>
     <tr><td>AvailableCharacterData</td><td>@sim.AvailableCharacterData</td></tr>
     <tr><td>Unlinked</td><td>@sim.Unlinked</td></tr>
-    <tr><td>ParentA</td><td>@sim.ParentA.FullName</td></tr>
-    <tr><td>ParentB</td><td>@sim.ParentB.FullName</td></tr>
-    <tr><td>Spouse</td><td>@sim.Spouse.FullName</td></tr>
+    <tr><td>ParentA</td><td>@(parentA != null ? parentA.FullName : "")</td></tr>
+    <tr><td>ParentB</td><td>@(parentB != null ? parentB.FullName : "")</td></tr>
+    <tr><td>Spouse</td><td>@(spouse != null ? spouse.FullName : "")</td></tr>
     <tr><td>BodyType</td><td>@sim.BodyType</td></tr>
     <tr><td>NPCType</td><td>@sim.NPCType</td></tr>
     <tr><td>SchoolType</td><td>@sim.SchoolType</td></tr>

@@ -21,6 +21,8 @@ namespace The_Sims_2_SimsExplorer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("SimsExplorer"));
         }
 
@@ -39,6 +41,8 @@ namespace The_Sims_2_SimsExplorer
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 

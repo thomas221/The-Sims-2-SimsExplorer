@@ -108,9 +108,9 @@ namespace The_Sims_2_SimsExplorer.Models
         [FieldHidden]
         private string image;
         [FieldHidden]
-        private List<Sim> parentAChildren;
+        private List<Sim> parentAChildren = new List<Sim>();
         [FieldHidden]
-        private List<Sim> parentBChildren;
+        private List<Sim> parentBChildren = new List<Sim>();
         [FieldHidden]
         private Sim spouseReverse;
 
@@ -217,6 +217,5 @@ namespace The_Sims_2_SimsExplorer.Models
         public virtual Sim SpouseReverse { get => spouseReverse; set => spouseReverse = value; }
         [FieldHidden]
         public string FullName { get => FirstName + " " + LastName; }
-
     }
 }
