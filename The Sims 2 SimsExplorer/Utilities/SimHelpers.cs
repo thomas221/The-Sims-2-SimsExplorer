@@ -19,6 +19,15 @@ namespace The_Sims_2_SimsExplorer.Utilities
             return null;
         }
 
+        public static void InitializeRelatedSims(List<Sim> simList)
+        {
+
+            foreach (var sim in simList)
+            {
+                InitializeRelatedSim(sim, simList);
+            }
+        }
+
         public static void InitializeRelatedSim(Sim sim,List<Sim> simList)
         {
             Sim spouse = SimHelpers.FindSim(sim.SpouseId, simList);

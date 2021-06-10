@@ -74,7 +74,27 @@ namespace The_Sims_2_SimsExplorer.Controllers
 
             return View("Sim");
         }
-        
+
+        [Route("sim/{id:int}/familytree")]
+        public IActionResult ShowFamilyTree(int id)
+        {
+            List<Sim> simList = ((JArray)JsonConvert.DeserializeObject(HttpContext.Session.GetString("SimList"))).ToObject<List<Sim>>();
+
+            Sim sim = SimHelpers.FindSim("" + id, simList);
+
+            if (sim == null)
+            {
+                return NotFound();
+            }
+            SimHelpers.InitializeRelatedSim(sim, simList);
+            ViewBag.ParentA = sim.ParentA;
+            ViewBag.ParentB = sim.ParentB;
+            ViewBag.Spouse = sim.Spouse;
+            ViewBag.Sim = sim;
+
+            return View("Sim");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
         {
