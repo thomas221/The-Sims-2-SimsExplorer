@@ -24,11 +24,11 @@ namespace The_Sims_2_SimsExplorer.Controllers
 
     public class HomeController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        //private readonly ApplicationDbContext _context; Don't need EF framework for now
 
-        public HomeController(ApplicationDbContext context)
+        public HomeController()
         {
-            _context = context;
+            //_context = context;
         }
 
         public IActionResult Index()
@@ -50,8 +50,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
         public IActionResult SimList()
         {
 
-            ViewBag.SimList = _context.Sims.ToList();
-
+            ViewBag.SimList = ((JArray)JsonConvert.DeserializeObject(HttpContext.Session.GetString("SimList"))).ToObject<List<Sim>>();
             return View();
         }
 
@@ -97,6 +96,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
         {
+
             if (file.Length > 0)
             {
                 var filePath = Path.GetTempFileName();
@@ -105,6 +105,19 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
+                //security checks
+                Debug.WriteLine("extension: " + file.ContentType);
+
+                //Stop if not zip or file name contains unsafe characters or size is bigger than 25 MB = 26214400
+                if (file.ContentType != "application/x-zip-compressed" || file.FileName.Contains("..") || file.FileName.Contains("\\") || file.FileName.Contains("/") || file.FileName.Length > 26214400)
+                {
+                    ViewBag.ErrorMessage = "Must be a zip file and smaller than 25 MB";
+                    return View("Error");
+                }
+
+                Debug.WriteLine("file name" + file.FileName);
+                Debug.WriteLine("size: " + file.Length);
+
                 var unzippedFolder = Path.ChangeExtension(filePath, null);
                 ZipFile.ExtractToDirectory(filePath, unzippedFolder);
 
@@ -126,8 +139,8 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 
                 HttpContext.Session.SetString("SimList",JsonConvert.SerializeObject(simList));
 
-                _context.Sims.AddRange(records);
-                _context.SaveChanges();
+                //_context.Sims.AddRange(records); Don't need EF framework for now
+                //_context.SaveChanges();
                 ViewBag.SimList = records;
 
 

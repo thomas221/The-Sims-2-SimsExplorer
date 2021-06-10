@@ -23,7 +23,7 @@ namespace The_Sims_2_SimsExplorer
             services.AddControllersWithViews();
             services.AddDistributedMemoryCache();
             services.AddSession();
-            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("SimsExplorer"));
+            //services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("SimsExplorer")); Dont need EF framework for now
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
