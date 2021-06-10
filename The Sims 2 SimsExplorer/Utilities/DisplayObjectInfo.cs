@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -45,6 +46,7 @@ namespace The_Sims_2_SimsExplorer.Utilities
             else
                 sb.Append("\r\n None");
 
+            Debug.WriteLine(sb.ToString());
             return sb.ToString();
         }
     }

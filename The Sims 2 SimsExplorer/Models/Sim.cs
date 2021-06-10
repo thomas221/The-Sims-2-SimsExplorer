@@ -217,5 +217,46 @@ namespace The_Sims_2_SimsExplorer.Models
         public virtual Sim SpouseReverse { get => spouseReverse; set => spouseReverse = value; }
         [FieldHidden]
         public string FullName { get => FirstName + " " + LastName; }
+        public virtual List<Sim> Children
+        {
+            get
+            {
+                return ParentAChildren.Concat(ParentBChildren).ToList();
+            }
+        }
+
+        public string ConvertToHTML()
+        {
+            return "<form id=\"form1\"><div class=\"tree\" id=\"FamilyTreeDiv\"><ul>" + ConvertNodeToHTML() + "</ul></div></form>";
+        }
+        public string ConvertNodeToHTML()
+        {
+            string html = "<li><div><span class=\"" + Gender.ToLower() + "\">" + FullName + "</span>";
+            if (Spouse == null)
+            {
+                html += "</div>";
+            }else
+            {
+                html += "<span class=\"spacer\"/>";
+                html += "<span class=\"" + Spouse.Gender.ToLower() + "\">" + Spouse.FullName + "</span></div>";
+            }
+
+            if (Children.Count == 0)
+            {
+                html += "</li>";
+            }
+            else
+            {
+                html += "<ul>";
+                foreach (Sim sim in Children)
+                {
+                    html += sim.ConvertNodeToHTML();
+                }
+
+                html += "</ul>";
+            }
+
+            return html;
+        }
     }
 }

@@ -13,6 +13,8 @@
 
 <h1>@sim.FirstName @sim.LastName</h1>
 
+<div><a href="/sim/@sim.SimId/familytree">Family Tree</a></div>
+
 @if (!String.IsNullOrEmpty(sim.Image))
 {
     <img src="data:image/png;base64, @sim.Image" />

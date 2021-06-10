@@ -86,13 +86,12 @@ namespace The_Sims_2_SimsExplorer.Controllers
             {
                 return NotFound();
             }
-            SimHelpers.InitializeRelatedSim(sim, simList);
-            ViewBag.ParentA = sim.ParentA;
-            ViewBag.ParentB = sim.ParentB;
-            ViewBag.Spouse = sim.Spouse;
+            SimHelpers.InitializeRelatedSims(simList);
             ViewBag.Sim = sim;
+            DisplayObjectInfo.ShowDisplayObjectInfo(sim);
+            ViewBag.Tree = sim.ConvertToHTML();
 
-            return View("Sim");
+            return View("FamilyTree");
         }
 
         [HttpPost]

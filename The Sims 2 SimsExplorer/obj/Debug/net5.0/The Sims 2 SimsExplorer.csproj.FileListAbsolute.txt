@@ -87,3 +87,4 @@ C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\
 C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.pdb
 C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\The Sims 2 SimsExplorer.genruntimeconfig.cache
 C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\thoma\source\repos\The-Sims-2-SimsExplorer\The Sims 2 SimsExplorer\obj\Debug\net5.0\Razor\Views\Home\FamilyTree.cshtml.g.cs
