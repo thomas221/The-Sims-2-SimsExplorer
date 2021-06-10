@@ -1,4 +1,7 @@
-﻿@{
+﻿@section styles {
+    <link rel="stylesheet" href="~/css/simlist.css" />
+}
+@{
     ViewData["Title"] = "Imported";
     var simList = ViewBag.SimList;
 }
@@ -6,14 +9,15 @@
 
 <p>Sims: </p>
 <table class="solid-border">
-@foreach (var record in simList)
-{
-    @if (!(record.FirstName == "" && record.LastName == "" && record.SimDescription == ""))
+    @foreach (var record in simList)
     {
-    <tr class="solid-border">
-        <td class="solid-border"><a href="/sim/@record.NID">@record.FirstName</a></td>
-        <td class="solid-border">@record.LastName</td>
-        <td class="solid-border">@record.SimDescription</td>
-    </tr>}
+        @if (!(record.FirstName == "" && record.LastName == "" && record.SimDescription == ""))
+        {
+            <tr class="solid-border">
+                <td class="solid-border"><a href="/sim/@record.SimId">@record.FirstName</a></td>
+                <td class="solid-border">@record.LastName</td>
+                <td class="solid-border">@record.SimDescription</td>
+            </tr>
+}
     }
 </table>

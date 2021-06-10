@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,13 +29,13 @@ namespace The_Sims_2_SimsExplorer.Models
         private string unlinked;
         private string parentA;
         [FieldHidden]
-        private string parentAName;
+        private Sim parentASim;
         private string parentB;
         [FieldHidden]
-        private string parentBName;
+        private Sim parentBSim;
         private string spouse;
         [FieldHidden]
-        private string spouseName;
+        private Sim spouseSim;
         private string bodyType;
         private string nPCType;
         private string schoolType;
@@ -106,11 +107,17 @@ namespace The_Sims_2_SimsExplorer.Models
         private string lifetimeWant;
         [FieldHidden]
         private string image;
+        [FieldHidden]
+        private List<Sim> parentAChildren;
+        [FieldHidden]
+        private List<Sim> parentBChildren;
+        [FieldHidden]
+        private Sim spouseReverse;
 
         public string Hood { get => hood; set => hood = value; }
         public string HoodName { get => hoodName; set => hoodName = value; }
         [Key]
-        public string NID { get => nID; set => nID = value; }
+        public string SimId { get => nID; set => nID = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string SimDescription { get => simDescription; set => simDescription = value; }
@@ -118,10 +125,11 @@ namespace The_Sims_2_SimsExplorer.Models
         public string HouseholdName { get => householdName; set => householdName = value; }
         public string HouseNumber { get => houseNumber; set => houseNumber = value; }
         public string AvailableCharacterData { get => availableCharacterData; set => availableCharacterData = value; }
+        public string ParentAId { get => parentA; set => parentA = value; }
+        public string ParentBId { get => parentB; set => parentB = value; }
+        public string SpouseId { get => spouse; set => spouse = value; }
         public string Unlinked { get => unlinked; set => unlinked = value; }
-        public string ParentA { get => parentA; set => parentA = value; }
-        public string ParentB { get => parentB; set => parentB = value; }
-        public string Spouse { get => spouse; set => spouse = value; }
+       
         public string BodyType { get => bodyType; set => bodyType = value; }
         public string NPCType { get => nPCType; set => nPCType = value; }
         public string SchoolType { get => schoolType; set => schoolType = value; }
@@ -191,14 +199,24 @@ namespace The_Sims_2_SimsExplorer.Models
         public string SecondaryAspiration { get => secondaryAspiration; set => secondaryAspiration = value; }
         public string HobbyPredestined { get => hobbyPredestined; set => hobbyPredestined = value; }
         public string LifetimeWant { get => lifetimeWant; set => lifetimeWant = value; }
-
-        [FieldHidden]
         public string Image { get => image; set => image = value; }
         [FieldHidden]
-        public string ParentAName { get => parentAName; set => parentAName = value; }
+        public virtual Sim ParentA { get => parentASim; set => parentASim = value; }
+        [InverseProperty("ParentA")]
         [FieldHidden]
-        public string ParentBName { get => parentBName; set => parentBName = value; }
+        public virtual List<Sim> ParentAChildren { get => parentAChildren; set => parentAChildren = value; }
         [FieldHidden]
-        public string SpouseName { get => spouseName; set => spouseName = value; }
+        public virtual Sim ParentB { get => parentBSim; set => parentBSim = value; }
+        [InverseProperty("ParentB")]
+        [FieldHidden]
+        public virtual List<Sim> ParentBChildren { get => parentBChildren; set => parentBChildren = value; }
+        [FieldHidden]
+        public virtual Sim Spouse { get => spouseSim; set => spouseSim = value; }
+        [InverseProperty("Spouse")]
+        [FieldHidden]
+        public virtual Sim SpouseReverse { get => spouseReverse; set => spouseReverse = value; }
+        [FieldHidden]
+        public string FullName { get => FirstName + " " + LastName; }
+
     }
 }

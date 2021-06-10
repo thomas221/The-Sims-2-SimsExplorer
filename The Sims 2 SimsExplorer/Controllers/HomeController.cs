@@ -88,46 +88,38 @@ namespace The_Sims_2_SimsExplorer.Controllers
 
                 foreach (var record in records)
                 {
-                    string imageFileLocation = unzippedFolder + "\\SimImage\\" + record.Hood + "_" + record.NID + ".png";
+                    string imageFileLocation = unzippedFolder + "\\SimImage\\" + record.Hood + "_" + record.SimId + ".png";
 
                     if (System.IO.File.Exists(imageFileLocation))
                     {
                         record.Image = Convert.ToBase64String(System.IO.File.ReadAllBytes(imageFileLocation));
                     }
+                    Debug.WriteLine(DisplayObjectInfo.ShowDisplayObjectInfo(record));
 
-                    Sim spouse = _context.Sims.Find(record.Spouse);
-                    if(spouse != null)
-                        record.SpouseName = spouse.FirstName+" "+spouse.LastName;
-                    
-                    Sim parentA = _context.Sims.Find(record.ParentA);
-                    if(parentA != null)
-                        record.ParentAName = parentA.FirstName + " " + parentA.LastName;
-
-                    Sim parentB = _context.Sims.Find(record.ParentB);
-                    if(parentB != null)
-                        record.ParentBName = parentB.FirstName + " " + parentB.LastName;
                 }
+
+                
 
                 _context.Sims.AddRange(records);
                 _context.SaveChanges();
 
-                //All sims are known now, so now we can give names to spouses etc
-
+                //All sims are known now, so now we can find spouses etc
+                /*
                 foreach(var record in _context.Sims.ToList())
                 {
                     Sim spouse = _context.Sims.Find(record.Spouse);
                     if (spouse != null)
-                        record.SpouseName = spouse.FirstName + " " + spouse.LastName;
+                        record.SpouseSim = spouse;
 
                     Sim parentA = _context.Sims.Find(record.ParentA);
                     if (parentA != null)
-                        record.ParentAName = parentA.FirstName + " " + parentA.LastName;
+                        record.ParentASim = parentA;
 
                     Sim parentB = _context.Sims.Find(record.ParentB);
                     if (parentB != null)
-                        record.ParentBName = parentB.FirstName + " " + parentB.LastName;
+                        record.ParentBSim = parentB;
                 }
-                _context.SaveChanges();
+                _context.SaveChanges();*/
                 ViewBag.SimList = records;
 
 

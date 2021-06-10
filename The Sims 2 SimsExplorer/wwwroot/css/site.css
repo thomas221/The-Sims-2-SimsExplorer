@@ -24,13 +24,6 @@ a {
   border-color: #1861ac;
 }
 
-.solid-border {
-    border : 2px solid black;
-}
-
-.bold {
-    font-weight: bold;
-}
 
 table.solid-border {
     border-collapse : collapse;
