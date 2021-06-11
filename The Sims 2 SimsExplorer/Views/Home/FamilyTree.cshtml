@@ -6,6 +6,8 @@
     var tree = ViewBag.Tree;
     var simId = ViewBag.Sim.SimId;
 }
-<a href="/Home/SimList">Home</a>
-<a href="/sim/@simId">Back</a>
+<nav>
+    <a href="/Home/SimList">Home</a>
+    <a href="/sim/@simId">Back</a>
+</nav>
 @Html.Raw(tree)
