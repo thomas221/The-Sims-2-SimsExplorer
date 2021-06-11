@@ -87,7 +87,6 @@ namespace The_Sims_2_SimsExplorer.Controllers
             }
             SimHelpers.InitializeRelatedSims(simList);
             ViewBag.Sim = sim;
-            DisplayObjectInfo.ShowDisplayObjectInfo(sim);
             ViewBag.Tree = sim.ConvertToHTML();
 
             return View("FamilyTree");
