@@ -2,6 +2,17 @@
     display: block;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+figcaption {
+    width: 120px;
+    margin: 0px;
+    padding: 0px;
+}
+
 
 
 * {
@@ -94,8 +105,8 @@
     font-family: arial, verdana, tahoma;
     font-size: 11px;
     display: inline-block;
-    min-width: 80px;
-    min-height: 30px;
+    min-width: 64px;
+    min-height: 64px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -111,34 +122,28 @@
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    width: 276px;
-    height: 276px;
     margin-bottom: 20px;
+    width: 140px;
+}
+
+.tree li div .female {
+    background-color: lightpink;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 20px;
+    width: 140px;
 }
 
 .tree li div .male img {
     margin-bottom: 20px;
-    width: 256px;
-    height: 256px;
 }
 
 
 .tree li div .female img {
     margin-bottom: 20px;
-    width: 256px;
-    height: 256px;
-}
-
-.tree li div .female {
-background-color: lightpink;
-display: inline-block;
-padding: 10px;
-border-radius: 5px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-width: 276px;
-height: 276px;
-margin-bottom: 20px;
 }
 
 .tree li div .spacer {
