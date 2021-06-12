@@ -22,5 +22,6 @@ namespace The_Sims_2_SimsExplorer
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+				
     }
 }
