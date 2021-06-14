@@ -178,7 +178,6 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 ViewBag.SimList = records;
 
 
-
             }
             return View("SimList");
         }
