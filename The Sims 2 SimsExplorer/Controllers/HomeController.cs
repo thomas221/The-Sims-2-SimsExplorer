@@ -173,7 +173,6 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 //_context.Sims.AddRange(records); Don't need EF framework for now
                 //_context.SaveChanges();
                 ViewBag.SimList = records;
-
             }
             return View("SimList");
         }

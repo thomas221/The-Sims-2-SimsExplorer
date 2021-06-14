@@ -6,7 +6,7 @@ name: Azure App Service - thesims2simsexplorer(Production), Build and deploy Dot
 on:
   push:
     branches:
-      - production
+      - main
 
 jobs:
   build-and-deploy:
