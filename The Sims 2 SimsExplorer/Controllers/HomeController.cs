@@ -1,4 +1,5 @@
 ﻿using FileHelpers;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -25,10 +26,12 @@ namespace The_Sims_2_SimsExplorer.Controllers
     public class HomeController : Controller
     {
         //private readonly ApplicationDbContext _context; Don't need EF framework for now
+        private IHostingEnvironment _hostingEnv;
 
-        public HomeController()
+        public HomeController(IHostingEnvironment hostingEnvironment)
         {
             //_context = context;
+            _hostingEnv = hostingEnvironment;
         }
 
         public IActionResult Index()
@@ -90,6 +93,38 @@ namespace The_Sims_2_SimsExplorer.Controllers
             ViewBag.Tree = sim.ConvertToHTML();
 
             return View("FamilyTree");
+        }
+
+        [HttpGet]
+        public IActionResult ExamplePlayFile() {
+
+            string unzippedFolder = Path.ChangeExtension(Path.GetTempFileName(),null);
+            ZipFile.ExtractToDirectory(_hostingEnv.WebRootPath+"/Genderswapped.zip", unzippedFolder);
+
+
+            var engine = new FileHelperEngine<Sim>(Encoding.UTF8);
+            var records = engine.ReadFile(unzippedFolder + "/ExportedSims.txt");
+
+
+            foreach (var record in records)
+            {
+                string imageFileLocation = unzippedFolder + "\\SimImage\\" + record.Hood + "_" + record.SimId + ".png";
+
+                if (System.IO.File.Exists(imageFileLocation))
+                {
+                    record.Image = Convert.ToBase64String(System.IO.File.ReadAllBytes(imageFileLocation));
+                }
+            }
+            var simList = records.ToList();
+
+            HttpContext.Session.SetString("SimList", JsonConvert.SerializeObject(simList));
+
+            //_context.Sims.AddRange(records); Don't need EF framework for now
+            //_context.SaveChanges();
+            ViewBag.SimList = records;
+
+            return View("SimList");
+
         }
 
         [HttpPost]
