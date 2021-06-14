@@ -149,9 +149,6 @@ namespace The_Sims_2_SimsExplorer.Controllers
                     return View("Error");
                 }
 
-                Debug.WriteLine("file name" + file.FileName);
-                Debug.WriteLine("size: " + file.Length);
-
                 var unzippedFolder = Path.ChangeExtension(filePath, null);
                 ZipFile.ExtractToDirectory(filePath, unzippedFolder);
 
