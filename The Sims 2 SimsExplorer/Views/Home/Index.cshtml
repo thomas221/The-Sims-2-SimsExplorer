@@ -2,6 +2,13 @@
     ViewData["Title"] = "Home Page";
 }
 
+<h1>Explore all properties of your Sims</h1>
+<p>Steps to take:</p>
+<ol>
+    <li>Export all data about your Sims via this tool: <a href="https://sourceforge.net/projects/simpe/">SimPE</a>.</li>
+    <li>Upload the zip-file below to start.</li>
+</ol>
+
 <form id="uploadForm" action="/Home/Upload" method="post"
       enctype="multipart/form-data" onsubmit="AJAXSubmit(this);return false;">
     <dl>
@@ -13,15 +20,16 @@
         </dd>
     </dl>
 
-    <input class="btn" type="submit" value="Upload" />
+    <input class="btn btn-primary" type="submit" value="Upload" />
 
     <div style="margin-top:15px">
         <output form="uploadForm" name="result"></output>
     </div>
 </form>
 
-Use an example play file:
-<a href="/Home/ExamplePlayFile">Click here</a>
+<p>OR:</p>
+<p>Click <a href="/Home/ExamplePlayFile">here</a> to start with a sample SimPE file. So you can explore the capabilities of this web application.</p>
+
 
 
 <script>
