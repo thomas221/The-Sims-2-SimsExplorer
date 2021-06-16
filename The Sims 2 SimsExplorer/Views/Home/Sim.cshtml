@@ -1,5 +1,6 @@
 ﻿@section styles {
     <link rel="stylesheet" href="~/css/sim.css" />
+    <link rel="stylesheet" href="~/css/familytree.css" />
 }
 @{
     ViewData["Title"] = "Sim";
@@ -7,19 +8,19 @@
     var parentA = ViewBag.ParentA;
     var parentB = ViewBag.ParentB;
     var spouse = ViewBag.Spouse;
+    var tree = ViewBag.Tree;
 }
 
 <a href="/Home/SimList">Back</a>
 
 <h1>@sim.FirstName @sim.LastName</h1>
 
-<div><a href="/sim/@sim.SimId/familytree">Family Tree</a></div>
-
 @if (!String.IsNullOrEmpty(sim.Image))
 {
     <img class="rounded mx-auto d-block" src="data:image/png;base64, @sim.Image" />
 }
-
+<br />
+<div><a href="#familytree">Click here for the family tree</a></div>
 <br />
 <table class="table table-bordered table-hover table-sm">
     <thead class="thead-light">
@@ -114,5 +115,6 @@
         <tr><td>LifetimeWant</td><td>@sim.LifetimeWant</td></tr>
     </tbody>
 </table>
-
+<h2 id="familytree">Family tree</h2>
+@Html.Raw(tree)
 
