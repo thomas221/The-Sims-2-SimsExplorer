@@ -231,14 +231,14 @@ namespace The_Sims_2_SimsExplorer.Models
         }
         public string ConvertNodeToHTML()
         {
-            string html = "<li><div class=\"familynode\"><span class=\"" + Gender.ToLower() + "\">" + "<figure><img src=\"data:image/png;base64, "+Image+"\" /><figcaption>"+FullName + "</figcaption></figure></span>";
+            string html = "<li><div class=\"familynode\"><span class=\"" + Gender.ToLower() + "\">" + "<figure><img class=\"img-thumbnail\" src=\"data:image/png;base64, " + Image+"\" /><figcaption>"+FullName + "</figcaption></figure></span>";
             if (Spouse == null)
             {
                 html += "</div>";
             }else
             {
                 html += "<span class=\"spacer\"></span>";
-                html += "<span class=\"" + Spouse.Gender.ToLower() + "\">" + "<figure><img src=\"data:image/png;base64, " + Spouse.Image + "\" /><figcaption>" + Spouse.FullName + "</figcaption></figure></span>";
+                html += "<span class=\"" + Spouse.Gender.ToLower() + "\">" + "<figure><img class=\"img-thumbnail\" src=\"data:image/png;base64, " + Spouse.Image + "\" /><figcaption>" + Spouse.FullName + "</figcaption></figure></span>";
             }
 
             if (Children.Count == 0)

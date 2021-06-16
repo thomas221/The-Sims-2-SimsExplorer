@@ -8,16 +8,26 @@
 
 
 <p>Sims: </p>
-<table class="solid-border">
-    @foreach (var record in simList)
-    {
-        @if (!(record.FirstName == "" && record.LastName == "" && record.SimDescription == ""))
+<table class="table table-bordered table-hover table-sm">
+    <thead class="thead-light">
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in simList)
         {
-            <tr class="solid-border">
-                <td class="solid-border"><a href="/sim/@record.SimId">@record.FirstName</a></td>
-                <td class="solid-border">@record.LastName</td>
-                <td class="solid-border">@record.SimDescription</td>
-            </tr>
-}
-    }
+
+            @if (!(record.FirstName == "" && record.LastName == "" && record.SimDescription == ""))
+            {
+
+                <tr>
+                    <td><a href="/sim/@record.SimId">@record.FullName</a></td>
+                    <td>@record.SimDescription</td>
+                </tr>
+
+            }
+        }
+    </tbody>
 </table>

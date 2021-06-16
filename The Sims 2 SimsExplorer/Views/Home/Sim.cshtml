@@ -17,15 +17,15 @@
 
 @if (!String.IsNullOrEmpty(sim.Image))
 {
-    <img src="data:image/png;base64, @sim.Image" />
+    <img class="img-thumbnail" src="data:image/png;base64, @sim.Image" />
 }
 
 <table>
     <tr><td>Hood</td><td>@sim.Hood</td></tr>
     <tr><td>HoodName</td><td>@sim.HoodName</td></tr>
     <tr><td>NID</td><td>@sim.SimId</td></tr>
-    <tr><td>FirstName</td><td><span class="bold">@sim.FirstName</span></td></tr>
-    <tr><td>LastName</td><td><span class="bold">@sim.LastName</span></td></tr>
+    <tr><td>FirstName</td><td><span class="font-weight-bold">@sim.FirstName</span></td></tr>
+    <tr><td>LastName</td><td><span class="font-weight-bold">@sim.LastName</span></td></tr>
     <tr><td>SimDescription</td><td>@sim.SimDescription</td></tr>
     <tr><td>FamilyInstance</td><td>@sim.FamilyInstance</td></tr>
     <tr><td>HouseholdName</td><td>@sim.HouseholdName</td></tr>
@@ -105,137 +105,5 @@
     <tr><td>HobbyPredestined</td><td>@sim.HobbyPredestined</td></tr>
     <tr><td>LifetimeWant</td><td>@sim.LifetimeWant</td></tr>
 </table>
-
-<form id="form1">
-
-    <div class="tree" id="FamilyTreeDiv">
-
-        <ul>
-
-            <li>
-                <div>
-                    <span class="female">
-                        @sim.FullName
-                    </span><span class="spacer"></span><span class="male">
-                        Jim Snow
-                        1633 - 1697
-                    </span>
-                </div>
-
-
-                <ul>
-
-                    <li>
-
-                        <div>
-                            <span class="male">
-                                Sam Snow
-                                1631 - 1695
-                            </span><span class="spacer"></span><span class="female">
-                                Lily Sight
-                                1633 - 1697
-                            </span>
-                        </div>
-
-
-                        <ul>
-
-                            <li>
-                                <div>
-                                    <span class="male">
-                                        Ralf Snow
-                                        1651 -
-                                    </span>
-                                </div>
-                            </li>
-
-
-                            <li>
-                                <div>
-                                    <span class="female">
-                                        Brie Snow
-                                        1653 -
-                                    </span>
-                                </div>
-                            </li>
-
-                        </ul>
-
-                    </li>
-
-
-                    <li>
-
-                        <div>
-                            <span class="male">
-                                Jim Snow
-                                1633 - 1697
-                            </span><span class="spacer"></span><span class="female">
-                                Zoe Blue
-                                1633 - 1697
-                            </span>
-                        </div>
-
-
-                        <ul>
-
-                            <li>
-                                <div>
-                                    <span class="male">
-                                        Ralf Snow
-                                        1651 -
-                                    </span><span class="spacer"></span><span class="female">
-                                        Sally Bern
-                                        1653 -
-                                    </span>
-                                </div>
-
-
-                                <ul>
-
-                                    <li>
-                                        <div>
-                                            <span class="female">
-                                                Magna Snow
-                                                1679 -
-                                            </span>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-
-                            <li>
-                                <div>
-                                    <span class="female">
-                                        Brie Snow
-                                        1653 -
-                                    </span>
-                                </div>
-                            </li>
-
-                        </ul>
-
-                    </li>
-
-
-                    <li>
-                        <div>
-                            <span class="male">
-                                John Snow
-                                1635 - 1699
-                            </span>
-                        </div>
-                    </li>
-
-                </ul>
-            </li>
-
-        </ul>
-
-    </div>
-
-</form>
 
 
