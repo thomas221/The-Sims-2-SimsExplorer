@@ -281,7 +281,7 @@ namespace The_Sims_2_SimsExplorer.Models
 
         public string ConvertToHTML()
         {
-            return "<form id=\"form1\"><div class=\"tree\" id=\"FamilyTreeDiv\"><ul>" + ConvertNodeToHTML() + "</ul></div></form>";
+            return "<form id=\"FamilyTreeForm\"><div class=\"tree\" id=\"FamilyTreeDiv\"><ul>" + ConvertNodeToHTML() + "</ul></div></form>";
         }
         public string ConvertNodeToHTML()
         {

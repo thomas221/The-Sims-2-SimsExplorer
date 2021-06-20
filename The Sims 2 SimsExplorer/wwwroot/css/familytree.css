@@ -13,8 +13,6 @@ figcaption {
     padding: 0px;
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -113,6 +111,7 @@ figcaption {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+    margin-bottom: 40px;
 }
 
 .tree li div .male {
