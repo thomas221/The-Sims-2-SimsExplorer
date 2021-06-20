@@ -75,7 +75,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
             ViewBag.Sim = sim;
 
 
-            ViewBag.Tree = sim.ConvertToHTML();
+            ViewBag.Tree = sim.ConvertUltimateAncestorToHTML();
 
             return View("Sim");
         }

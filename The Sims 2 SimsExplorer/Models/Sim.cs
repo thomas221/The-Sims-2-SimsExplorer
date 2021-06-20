@@ -225,6 +225,51 @@ namespace The_Sims_2_SimsExplorer.Models
             }
         }
 
+        public Sim FindUltimateAncestor()
+        {
+            return FindUltimateAncestorStep().ancestor;
+        }
+
+        public (int index,Sim ancestor) FindUltimateAncestorStep()
+        {
+            int i=0;
+            int j=0;
+            Sim ancestorA = null;
+            Sim ancestorB = null;
+            if (ParentA != null)
+            {
+                var result = ParentA.FindUltimateAncestorStep();
+                i = result.index+1;
+                ancestorA = result.ancestor;
+            }                    
+            if (ParentB != null)
+            {
+                var result = ParentB.FindUltimateAncestorStep();
+                j = result.index + 1;
+                ancestorB = result.ancestor;
+            }
+            if (ParentA == null & ParentB == null)
+            {
+                return (0, this);
+            }
+
+            if (i < j)
+            {
+                return (j, ancestorB);
+            }
+            else
+            {
+                return (i, ancestorA);
+            }
+
+
+        }
+
+        public string ConvertUltimateAncestorToHTML()
+        {
+            return FindUltimateAncestor().ConvertToHTML();
+        }
+
         public string ConvertToHTML()
         {
             return "<form id=\"form1\"><div class=\"tree\" id=\"FamilyTreeDiv\"><ul>" + ConvertNodeToHTML() + "</ul></div></form>";
