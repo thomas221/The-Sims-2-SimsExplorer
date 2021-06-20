@@ -129,7 +129,7 @@ namespace The_Sims_2_SimsExplorer.Models
         public string ParentBId { get => parentB; set => parentB = value; }
         public string SpouseId { get => spouse; set => spouse = value; }
         public string Unlinked { get => unlinked; set => unlinked = value; }
-       
+
         public string BodyType { get => bodyType; set => bodyType = value; }
         public string NPCType { get => nPCType; set => nPCType = value; }
         public string SchoolType { get => schoolType; set => schoolType = value; }
@@ -199,7 +199,16 @@ namespace The_Sims_2_SimsExplorer.Models
         public string SecondaryAspiration { get => secondaryAspiration; set => secondaryAspiration = value; }
         public string HobbyPredestined { get => hobbyPredestined; set => hobbyPredestined = value; }
         public string LifetimeWant { get => lifetimeWant; set => lifetimeWant = value; }
-        public string Image { get => image; set => image = value; }
+        //png image as base64 string
+        public string Image { 
+            get { if(image==null){
+                    //if no image, show image with text 'no picture'
+                    return "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";
+                }else{
+                    return image;
+                }
+                } 
+            set => image = value; }
         [FieldHidden]
         public virtual Sim ParentA { get => parentASim; set => parentASim = value; }
         [InverseProperty("ParentA")]
