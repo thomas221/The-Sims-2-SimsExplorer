@@ -151,7 +151,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 bool invalid = false;
                 if (file.ContentType != "application/x-zip-compressed")
                 {
-                    ViewBag.ErrorMessage = "Uploaded file is not a zip-file. Content type is not application/x-zip-compressed.";
+                    ViewBag.ErrorMessage = "Uploaded file is not a zip file. Content type is not 'application/x-zip-compressed'.";
                     invalid = true;
                 }
 
