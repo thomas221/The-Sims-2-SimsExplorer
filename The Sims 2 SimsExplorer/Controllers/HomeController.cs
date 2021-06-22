@@ -147,9 +147,40 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 Debug.WriteLine("extension: " + file.ContentType);
 
                 //Stop if not zip or file name contains unsafe characters or size is bigger than 25 MB = 26214400
-                if (file.ContentType != "application/x-zip-compressed" || file.FileName.Contains("..") || file.FileName.Contains("\\") || file.FileName.Contains("/") || file.FileName.Length > 26214400)
+
+                bool invalid = false;
+                if (file.ContentType != "application/x-zip-compressed")
                 {
-                    ViewBag.ErrorMessage = "Must be a zip file and smaller than 25 MB";
+                    ViewBag.ErrorMessage = "Uploaded file is not a zip-file. Content type is not application/x-zip-compressed.";
+                    invalid = true;
+                }
+
+                if (file.FileName.Contains(".."))
+                {
+                    ViewBag.ErrorMessage = "The file name contains '..'. This is not allowed.";
+                    invalid = true;
+                }
+
+                if (file.FileName.Contains("\\"))
+                {
+                    ViewBag.ErrorMessage = "The file name contains '\\'. This is not allowed.";
+                    invalid = true;
+                }
+
+                if (file.FileName.Contains("/"))
+                {
+                    ViewBag.ErrorMessage = "The file name contains '/'. This is not allowed.";
+                    invalid = true;
+                }
+
+                if (file.FileName.Length > 26214400)
+                {
+                    ViewBag.ErrorMessage = "The file size is bigger than 25 MB. Try again with a file that is smaller than 25 MB.";
+                    invalid = true;
+                }
+
+                if (invalid)              
+                {
                     return View("Error");
                 }
 
