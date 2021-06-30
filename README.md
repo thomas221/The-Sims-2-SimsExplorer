@@ -6,7 +6,7 @@ Each Sim in The Sims 2 has a lot of properties. Only a few can be inspected insi
 **How do I use this web application?**
 You can import files created via the SimPE tool, which you can find [here](https://sourceforge.net/projects/simpe/).
 This enables you to see all properties of each Sim.
-The web application also builds a family tree per Sim based on the so-called ParentA and ParentB properties of each Sim.
+The web application also builds a family tree per Sim based on the ParentA and ParentB properties of each Sim.
 
 **How to open development environment:**
 Open the .sln file with visual studio
