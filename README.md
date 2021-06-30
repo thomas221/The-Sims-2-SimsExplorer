@@ -11,8 +11,8 @@ The web application also builds a family tree per Sim based on the so-called Par
 **How to open development environment:**
 Open the .sln file with visual studio
 
-**Production**
+**The official production instance**
 Push to 'main' will update production version at [link to https://thesims2simsexplorer.azurewebsites.net/](https://thesims2simsexplorer.azurewebsites.net/)
-It's using an Azure subscription, so it might not be running at times.
+It's using an Azure subscription with a spending limit, so it might not be running at times. The web application itself is running on the free tier, but there are also other things running under that subscription.
 
 ![Family tree](/SimsexplorerFamilyTree.png)
