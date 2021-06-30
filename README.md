@@ -1,7 +1,11 @@
 # The-Sims-2-SimsExplorer
 
 **What does this web application do?**
-You can import files created via the SimPE tool, which you can find [here](https://sourceforge.net/projects/simpe/) , to see all properties of each Sim you have included in the file.
+Each Sim in The Sims 2 has a lot of properties. Only a few can be inspected inside the game. With this website you can see all properties. And family trees.
+
+**How do I use this web application?**
+You can import files created via the SimPE tool, which you can find [here](https://sourceforge.net/projects/simpe/).
+This enables you to see all properties of each Sim you have included in the file.
 The web application also builds a family tree per Sim based on the so-called ParentA and ParentB properties of each Sim.
 
 **How to open development environment:**
