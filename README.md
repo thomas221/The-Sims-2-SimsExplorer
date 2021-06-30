@@ -8,4 +8,4 @@ Push to 'main' will update production version at [link to https://thesims2simsex
 
 It's using an Azure subscription, so it might not be running at times.
 
-![Family tree](//SimsexplorerFamilyTree.png)
+![Family tree](/SimsexplorerFamilyTree.png)
