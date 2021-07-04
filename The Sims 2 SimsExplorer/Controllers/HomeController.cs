@@ -135,7 +135,7 @@ namespace The_Sims_2_SimsExplorer.Controllers
         public async Task<IActionResult> Upload(IFormFile file)
         {
 
-            if (file.Length > 0)
+            if (file != null && file.Length > 0)
             {
                 var filePath = Path.GetTempFileName();
 
@@ -149,11 +149,6 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 //Stop if not zip or file name contains unsafe characters or size is bigger than 25 MB = 26214400
 
                 bool invalid = false;
-                if (file.ContentType != "application/x-zip-compressed")
-                {
-                    ViewBag.ErrorMessage = "Uploaded file is not a zip file. Content type is not 'application/x-zip-compressed'.";
-                    invalid = true;
-                }
 
                 if (file.FileName.Contains(".."))
                 {
@@ -208,6 +203,11 @@ namespace The_Sims_2_SimsExplorer.Controllers
                 //_context.Sims.AddRange(records); Don't need EF framework for now
                 //_context.SaveChanges();
                 ViewBag.SimList = records;
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "File is empty. Did you select a file?";
+                return View("Error");
             }
 
 
